@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Danh sách khách hàng";
+    var listcustomer = ViewBag.listcustomer as List<Lab04.Models.DTNTcustomer>;
+    int stt = 0;
+}
+
+<h2>Danh sách khách hàng</h2>
+<div class="row">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Mã số</th>
+                <th>Họ và tên</th>
+                <th>Địa chỉ</th>
+                <th>Năm sinh</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in listcustomer)
+             {
+                stt++;
+            <tr>
+                <td>@stt</td>
+                <td>@item.CustomerID</td>
+                <td>@item.FirstName @item.LastName</td>
+                <td>@item.Address</td>
+                <td>@item.YearofBirth</td>
+                <td>
+                    <a href=" #">Edit</a>
+                    <a href=" #">Delete</a>
+                </td>
+            </tr>
+             }
+        </tbody>
+    </table>
+</div>
